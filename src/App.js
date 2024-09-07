@@ -9,7 +9,7 @@ import MySkills from "./scenes/MySkills";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const isDesktop = useMediaQuery("(min-width: 1060px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +28,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <div className="w-5/6 mx-auto md:h-full">
-        {isAboveMediumScreens && (
+        {isDesktop && (
           <DotGroup 
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
